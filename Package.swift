@@ -8,8 +8,11 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "data-structures",
-            targets: ["data-structures"]),
+            name: "DataStructures",
+            targets: ["DataStructures"]),
+        .library(
+            name: "StackModule",
+            targets: ["StackModule"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -19,10 +22,17 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "data-structures",
+            name: "DataStructures",
+            dependencies: [
+                "StackModule",
+            ],
+            path: "Sources/DataStructures"),
+        // Stack<Element>
+        .target(
+            name: "StackModule",
             dependencies: []),
         .testTarget(
-            name: "data-structuresTests",
-            dependencies: ["data-structures"]),
+            name: "StackTests",
+            dependencies: ["StackModule"]),
     ]
 )
