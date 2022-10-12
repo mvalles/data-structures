@@ -10,7 +10,7 @@ The package currently provides the following implementations:
 
 [Stack]: Documentation/Stack.md
 
-Swift **DataStructures** uses the same modularization approach as [**Swift Numerics**](https://github.com/apple/swift-numerics): it provides a standalone module for each thematic group of data structures it implements. For instance, if you only need a `Stack` type, you can pull in only that by importing `StackModule`. 
+Swift **DataStructures** provides a standalone module for each thematic group of data structures it implements. For instance, if you only need a `Stack` type, you can pull in only that by importing `StackModule`. 
 
 However, there is also a top-level `DataStructures` module that gives you every data structure with a single import statement:
 
@@ -22,9 +22,9 @@ stack.push(3)
 stack.push(4)
 print(stack) 
 // ----top----
-4
-3
-2
-1
------------
+// 4
+// 3
+// 2
+// 1
+// -----------
 ```
