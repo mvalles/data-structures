@@ -28,3 +28,42 @@ print(stack)
 // 1
 // -----------
 ```
+
+## Using **Data Structures** in your project
+
+To use this package in a SwiftPM project, you need to set it up as a package dependency:
+
+```swift
+// swift-tools-version:5.7
+import PackageDescription
+
+let package = Package(
+  name: "MyPackage",
+  dependencies: [
+    .package(
+      url: "https://github.com/mvalles/data-structures.git", 
+      .upToNextMajor(from: "0.0.1") // or `.upToNextMinor
+    )
+  ],
+  targets: [
+    .target(
+      name: "MyTarget",
+      dependencies: [
+        .product(name: "DataStructures", package: "data-structures")
+      ]
+    )
+  ]
+)
+```
+
+## Contributing to Data Structures
+
+Discussions are enabled: [Data Structures Discusions][discussions] where people can ask and answer questions on how to use or work on this package. It's also a great place to discuss its evolution.
+
+If you find something that looks like a bug, please open a [Bug Report][bugreport]! Fill out as many details as you can.
+
+[discussions]: https://github.com/mvalles/data-structures/discussions
+[bugreport]: https://github.com/mvalles/data-structures/issues/new?assignees=&labels=bug&template=BUG_REPORT.md
+
+Enjoy! 😀
+

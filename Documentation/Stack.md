@@ -1,5 +1,5 @@
 #  Stack
-Array-based data structure implementing `push` and `pop` operations on the top implementing a last-in,first-out, or LIFO, policy.
+Array-based data structure implementing `push` and `pop` operations on the top implementing a last-in, first-out, or LIFO, policy.
 
 ## Declaration
 
@@ -7,7 +7,7 @@ Array-based data structure implementing `push` and `pop` operations on the top i
 public struct Stack<Element>
 ```
 ## Overview
-Array-backeck [stacks](https://en.wikipedia.org/wiki/Stack_(abstract_data_type) must provide (`O(1)`) for all of its operations.  
+Array-backeck [stacks](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) must provide (`O(1)`) for all of its operations.  
 
 
 ### Initialization
@@ -42,7 +42,7 @@ stack.push(6)
 stack.isEmpty // false
 ```
 
-Use ´count´ to get the number of elements in the `Stack`:
+Use `count to get the number of elements in the `Stack`:
 ```swift
 var stack = Stack<Int>()
 stack.push(6)
@@ -50,8 +50,8 @@ stack.push(5)
 let size = stack.count // size = 2
 ```
 
-To take a look at the top of the `Stack` without mutating its contents, call ´peek()´: 
-´peek()`return `nil` if the `Stack` is empty
+To take a look at the top of the `Stack` without mutating its contents, call `peek()`: 
+`peek()` return `nil` if the `Stack` is empty
 
 ```swift
 var stack = Stack<Int>()
@@ -81,3 +81,4 @@ stack.pop(6)
 stack.isEmpty // true
 ```
 
+Enjoy! 😀
