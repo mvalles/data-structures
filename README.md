@@ -8,6 +8,10 @@ The package currently provides the following implementations:
 
 - [`Stack<Element>`][Stack], array-based data structure implementing `push` and `pop` operations at the top with last-in,first-out, or LIFO, policy.
 
+The following data structures are currently being worked on but they aren't ready for inclusion in a tagged release:
+
+- [`SimpleLinkedList<Value>`](https://github.com/mvalles/data-structures/issues/4), implements a Simple Linked List.
+
 [Stack]: Documentation/Stack.md
 
 Swift **DataStructures** provides a standalone module for each thematic group of data structures it implements. For instance, if you only need a `Stack` type, you can pull in only that by importing `StackModule`. 
