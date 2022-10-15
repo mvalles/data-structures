@@ -4,22 +4,25 @@
 /// This introduced a ´SimpleLinkedList´ as a collection of values arranged in a linear and unidirectional sequence.
 /// This has some advantages over contiguous storage options like ´Array´:
 /// - Constant time insertions and removal from the front of the list
-/// - No need to allocate initial space or resize when the when the array is filled
+/// - No need to allocate initial space or resize when the array is filled
 
 @frozen
 public struct SimpleLinkedList<Value> {
     @usableFromInline
-    internal var _head: Node<Value>?
+    internal typealias _Node = SimpleLinkedListNode<Value>
     
     @usableFromInline
-    internal var _tail: Node<Value>?
+    internal var _head: _Node?
+    
+    @usableFromInline
+    internal var _tail: _Node?
     
     @usableFromInline
     internal var _size: Int = 0
     
     @inlinable
     public init() {}
-
+    
 }
 
 // MARK: - Computed instance properties
@@ -29,7 +32,13 @@ extension SimpleLinkedList {
     /// - Complexity: O(1)
     @inlinable @inline(__always)
     public var first: Value? { _head?._value }
-
+    
+    /// Return last `Value` of the `SimpleLinkedList` or `nil` if the list is empty.
+    ///
+    /// - Complexity: O(1)
+    @inlinable @inline(__always)
+    public var last: Value? { _tail?._value }
+    
     /// The number of elements in the `SimpleLinkedList`.
     ///
     /// - Complexity: O(1)

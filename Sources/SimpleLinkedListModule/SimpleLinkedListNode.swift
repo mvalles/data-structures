@@ -2,23 +2,25 @@
 //
 //
 extension SimpleLinkedList {
-    public class Node<Value> {
+    @usableFromInline
+    internal class SimpleLinkedListNode<Value> {
         @usableFromInline
         internal var _value: Value
         
         @usableFromInline
-        internal var _next: Node?
+        internal var _next: SimpleLinkedListNode?
         
         @inlinable
-        public init(value: Value, next: Node? = nil) {
+        internal init(value: Value, next: SimpleLinkedListNode? = nil) {
             self._value = value
             self._next = next
         }
     }
 }
 
-extension SimpleLinkedList.Node: CustomStringConvertible {
-    public var description: String {
+extension SimpleLinkedList.SimpleLinkedListNode: CustomStringConvertible {
+    @usableFromInline
+    internal var description: String {
         guard let _next = _next else {
             return "\(_value)"
         }
