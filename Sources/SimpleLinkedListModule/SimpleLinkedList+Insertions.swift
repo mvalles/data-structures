@@ -36,7 +36,7 @@ extension SimpleLinkedList {
     /// - Complexity: O(`index-2`)
     @usableFromInline
     internal func node(at index: Int) -> SimpleLinkedListNode<Value>? {
-        guard index <= _size - 1 && !isEmpty else { return nil }
+        guard index >= 0 && index <= _size - 1 && !isEmpty else { return nil }
         
         if index == 0 {
             return _head
@@ -58,13 +58,13 @@ extension SimpleLinkedList {
     /// - Parameters:
     ///     - value: the `value` to insert
     ///     - after: 0-indexed position in the Linked List.  `after` must be a valid index of the Linked List or equal to its size-1 property.
-    /// - Returns:`true` if the `value` is inserted of `false` if index out-of bounds.
+    /// - Returns:`true` if the `value` is inserted or `false` if index out-of bounds.
     /// - Complexity: O(`index-2`) when calling node(at:). O(1) otherwise
     @discardableResult
     @inlinable
     public mutating func insert(_ value: Value, after index: Int) -> Bool {
-        guard index <= _size - 1 || (isEmpty && index == 0) else { return false }
-        
+        guard index >= 0 && (index <= _size - 1 || (isEmpty && index == 0)) else { return false }
+                
         if index == 0 && isEmpty {
             push(value)
             return true

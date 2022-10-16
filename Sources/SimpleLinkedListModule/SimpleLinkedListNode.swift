@@ -15,6 +15,11 @@ extension SimpleLinkedList {
             self._value = value
             self._next = next
         }
+        
+        @inlinable
+        deinit {
+            print("Deallocating value \(_value).")
+        }
     }
 }
 
