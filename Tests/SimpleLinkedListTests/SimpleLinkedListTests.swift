@@ -40,4 +40,29 @@ final class SimpleLinkedListTests: XCTestCase {
         list.append(40)
         XCTAssertEqual(list.last, 40)
     }
+    
+    // MARK: - Initializers
+    func test_initializer_fromCollection() {
+        var list = SimpleLinkedList(Array(1...20))
+        XCTAssertEqual(list.last, 20)
+
+        for number in stride(from: 20, through: 1, by: -1) {
+            XCTAssertEqual(list.removeLast(), number)
+        }
+        XCTAssertTrue(list.isEmpty)
+    }
+    
+    func test_initializer_fromSequence() {
+        let list = SimpleLinkedList((1...).prefix(20))
+        XCTAssertEqual(list.size, 20)
+    }
+    
+    func test_initializer_fromArrayLiteral() {
+        var list: SimpleLinkedList = [1, 3, 5, 7, 9]
+        XCTAssertEqual(list.size, 5)
+        
+        for number in stride(from: 9, through: 1, by: -2) {
+            XCTAssertEqual(list.removeLast(), number)
+        }
+    }
 }

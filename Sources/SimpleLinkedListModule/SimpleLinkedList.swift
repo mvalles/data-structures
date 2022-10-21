@@ -54,6 +54,36 @@ extension SimpleLinkedList {
     }
 }
 
+// MARK: - Initilize SimpleLinkedList from Sequence
+
+extension SimpleLinkedList {
+    /// Initializes a SimpleLinkedList from a sequence.
+    ///
+    @inlinable
+    public init<S: Sequence>(_ elements: S) where S.Element == Value {
+        for element in elements {
+            append(element)
+        }
+    }
+}
+
+// MARK: - ExpressibleByArrayLiteral makes SimpleLinkedList initializable from an array literal
+
+extension SimpleLinkedList: ExpressibleByArrayLiteral {
+    /// Creates a new SimpleLinkedList from the contents of an array literal.
+    ///
+    /// **Do not call this initializer directly.** It is used by the compiler when
+    /// you use an array literal. Instead, create a new SimpleLinkedList using an array
+    /// literal as its value by enclosing a comma-separated list of values in
+    /// square brackets. You can use an array literal anywhere a SimpleLinkedList is expected
+    /// by the type context.
+    ///
+    /// - Parameter elements: A variadic list of elements of the new SimpleLinkedList.
+    public init(arrayLiteral elements: Value...) {
+        self.init(elements)
+    }
+}
+
 // MARK: - CustomDebugStringConvertible representation of Stack types for debugging
 
 extension SimpleLinkedList: CustomStringConvertible {

@@ -96,15 +96,15 @@ extension Stack {
 // MARK: - ExpressibleByArrayLiteral makes stack initializable from an array literal
 
 extension Stack: ExpressibleByArrayLiteral {
-    /// Creates a new heap from the contents of an array literal.
+    /// Creates a new stack from the contents of an array literal.
     ///
     /// **Do not call this initializer directly.** It is used by the compiler when
-    /// you use an array literal. Instead, create a new heap using an array
+    /// you use an array literal. Instead, create a new stack using an array
     /// literal as its value by enclosing a comma-separated list of values in
-    /// square brackets. You can use an array literal anywhere a heap is expected
+    /// square brackets. You can use an array literal anywhere a stack is expected
     /// by the type context.
     ///
-    /// - Parameter elements: A variadic list of elements of the new heap.
+    /// - Parameter elements: A variadic list of elements of the new stack.
     public init(arrayLiteral elements: Element...) {
         self.init(elements)
     }
