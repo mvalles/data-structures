@@ -68,7 +68,6 @@ extension SimpleLinkedList {
 }
 
 // MARK: - ExpressibleByArrayLiteral makes SimpleLinkedList initializable from an array literal
-
 extension SimpleLinkedList: ExpressibleByArrayLiteral {
     /// Creates a new SimpleLinkedList from the contents of an array literal.
     ///
@@ -81,6 +80,27 @@ extension SimpleLinkedList: ExpressibleByArrayLiteral {
     /// - Parameter elements: A variadic list of elements of the new SimpleLinkedList.
     public init(arrayLiteral elements: Value...) {
         self.init(elements)
+    }
+}
+
+// MARK: - Value Semantics
+extension SimpleLinkedList {
+    @inlinable
+    internal mutating func copyNodes() {
+        guard !isKnownUniquelyReferenced(&_head) else {
+            return
+        }
+        guard var oldNode = _head else {
+            return
+        }
+        _head = SimpleLinkedListNode(value: oldNode._value)
+        var newNode = _head
+        while let nextOldNode = oldNode._next {
+            newNode!._next = SimpleLinkedListNode(value: nextOldNode._value)
+            newNode = newNode!._next
+            oldNode = nextOldNode
+        }
+        _tail = newNode
     }
 }
 

@@ -28,6 +28,7 @@ extension SimpleLinkedList {
     @discardableResult
     @inlinable
     public mutating func removeLast() -> Value? {
+        copyNodes()
         guard !isEmpty else { return nil }
         guard _size != 1 else { return pop() }
         defer {
@@ -47,6 +48,7 @@ extension SimpleLinkedList {
     @discardableResult
     @inlinable
     public mutating func remove(after: Int) -> Value? {
+        copyNodes()
         guard after >= 0 && after <= _size - 2 && _size > 1 else { return nil }
         
         let previousNode = node(at: after)

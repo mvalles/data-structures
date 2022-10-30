@@ -23,6 +23,7 @@ extension SimpleLinkedList {
             push(value)
             return
         }
+        copyNodes()
         _tail!._next = SimpleLinkedListNode(value: value)
         _tail = _tail!._next
         _size += 1
@@ -63,6 +64,7 @@ extension SimpleLinkedList {
     @discardableResult
     @inlinable
     public mutating func insert(_ value: Value, after index: Int) -> Bool {
+        copyNodes()
         guard index >= 0 && (index <= _size - 1 || (isEmpty && index == 0)) else { return false }
                 
         if index == 0 && isEmpty {
