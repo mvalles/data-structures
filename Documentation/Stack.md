@@ -77,8 +77,23 @@ To delete an element at the top of the`Stack`, call `pop()`:
 ```swift
 var stack = Stack<Int>()
 stack.push(6)
-stack.pop(6)
+stack.pop()
 stack.isEmpty // true
 ```
+
+### Iteration
+<TODO> Sequence protocol conformance
+
+### Performance
+| Operation     | Complexity     |
+|-----------    |:----------:    |
+| push          |    O(1)        |
+| pop           |    O(1)        |
+| peek          |    O(1)        |
+
+## Implementation Details
+An `Stack` stores its members in a regular `ContiguousArray` value (exposed by the `_storage` property).
+
+All operations performed on the stack are done at the end of the array so its performance is O(1)
 
 Enjoy! 😀
