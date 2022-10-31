@@ -13,6 +13,9 @@ let package = Package(
         .library(
             name: "StackModule",
             targets: ["StackModule"]),
+        .library(
+            name: "SimpleLinkedListModule",
+            targets: ["SimpleLinkedListModule"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -25,6 +28,7 @@ let package = Package(
             name: "DataStructures",
             dependencies: [
                 "StackModule",
+                "SimpleLinkedListModule",
             ],
             path: "Sources/DataStructures"),
         // Stack<Element>
@@ -34,5 +38,12 @@ let package = Package(
         .testTarget(
             name: "StackTests",
             dependencies: ["StackModule"]),
+        // SimpleLinkedList<Value>
+        .target(
+            name: "SimpleLinkedListModule",
+            dependencies: []),
+        .testTarget(
+            name: "SimpleLinkedListTests",
+            dependencies: ["SimpleLinkedListModule"]),
     ]
 )
