@@ -13,8 +13,8 @@ import CollectionsBenchmark
 import Benchmarks
 
 var benchmark = Benchmark(title: "Collection Benchmarks")
+benchmark.addArrayBenchmarks()
 benchmark.addStackBenchmarks()
-
-//benchmark.chartLibrary = try benchmark.loadReferenceLibrary()
+benchmark.addSimpleLinkedListBenchmarks()
 
 benchmark.main()

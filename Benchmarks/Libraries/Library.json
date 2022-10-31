@@ -1,0 +1,160 @@
+{
+    "kind": "group",
+    "title": "All results",
+    "directory": "Results",
+    "contents": [
+        {
+            "kind": "group",
+            "title": "Individual types",
+            "directory": "single",
+            "contents": [
+                {
+                    "kind": "group",
+                    "title": "Array",
+                    "contents": [
+                        {
+                            "kind": "chart",
+                            "title": "operations",
+                            "tasks": [
+                                "Array<Int> append",
+                                "Array<Int> prepend",
+                                "Array<Int> random insertions",
+                                "Array<Int> removeFirst",
+                                "Array<Int> removeLast",
+                                "Array<Int> random removals",
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "kind": "group",
+                    "title": "Stack",
+                    "contents": [
+                        {
+                            "kind": "chart",
+                            "title": "operations",
+                            "tasks": [
+                                "Stack<Int> init from range",
+                                "Stack<Int> init from buffer",
+                                "Stack<Int> push",
+                                "Stack<Int> pop",
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "kind": "group",
+                    "title": "SimpleLinkedList",
+                    "contents": [
+                        {
+                            "kind": "chart",
+                            "title": "operations",
+                            "tasks": [
+                                "SimpleLinkedList<Int> init from range",
+                                "SimpleLinkedList<Int> init from buffer",
+                                "SimpleLinkedList<Int> push",
+                                "SimpleLinkedList<Int> append",
+                                "SimpleLinkedList<Int> random insertions",
+                                "SimpleLinkedList<Int> pop",
+                                "SimpleLinkedList<Int> removeLast",
+                                "SimpleLinkedList<Int> random deletions",
+                                "SimpleLinkedList<Int> sequential iteration",
+                            ]
+                        },
+                    ]
+                },
+                
+                
+            ]
+        },
+        {
+            "kind": "group",
+            "title": "Against other Swift collections",
+            "directory": "stdlib",
+            "contents": [
+                {
+                    "kind": "group",
+                    "title": "Stack vs Array",
+                    "contents": [
+                        {
+                            "kind": "chart",
+                            "title": "push element",
+                            "tasks": [
+                                "Array<Int> append",
+                                "Stack<Int> push",
+                            ]
+                        },
+                        {
+                            "kind": "chart",
+                            "title": "pop element",
+                            "tasks": [
+                                "Array<Int> removeLast",
+                                "Stack<Int> pop",
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "kind": "group",
+                    "title": "SimpleLinkedList vs Array",
+                    "contents": [
+                        {
+                            "kind": "chart",
+                            "title": "push element",
+                            "tasks": [
+                                "Array<Int> append",
+                                "SimpleLinkedList<Int> push",
+                            ]
+                        },
+                        {
+                            "kind": "chart",
+                            "title": "append element",
+                            "tasks": [
+                                "Array<Int> prepend",
+                                "SimpleLinkedList<Int> append",
+                            ]
+                        },
+                        {
+                            "kind": "chart",
+                            "title": "random insertions",
+                            "tasks": [
+                                "Array<Int> random insertions",
+                                "SimpleLinkedList<Int> random insertions",
+                            ]
+                        },
+                        {
+                            "kind": "chart",
+                            "title": "pop element",
+                            "tasks": [
+                                "Array<Int> removeFirst",
+                                "SimpleLinkedList<Int> pop",
+                            ]
+                        },
+                        {
+                            "kind": "chart",
+                            "title": "remove last element",
+                            "tasks": [
+                                "Array<Int> removeLast",
+                                "SimpleLinkedList<Int> removeLast",
+                            ]
+                        },
+                        {
+                            "kind": "chart",
+                            "title": "random deletions",
+                            "tasks": [
+                                "Array<Int> random removals",
+                                "SimpleLinkedList<Int> random deletions",
+                            ]
+                        },
+                        
+                        
+                    ]
+                    
+                    
+                }
+            ]
+        }
+    ]
+}
+
+

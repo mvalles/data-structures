@@ -139,7 +139,7 @@ list.isEmpty // true
 ```
 
 ### Iteration
-<TODO> Sequence protocol conformance
+`SimpleLinkedList` Collection protocol conformance.
 
 ### Performance
 | Operation     | Complexity     |
